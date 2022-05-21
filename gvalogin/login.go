@@ -80,10 +80,10 @@ const PORT string = "127.0.0.1:7001"
 
 
 //获取token
-func (login *Login) Xtoken(url string) (string, string) {
+func (login *Login) Xtoken(url string, user string, passwd string) (string, string) {
 	captcha, captchaId := login.Ddddorc(url)
 	fmt.Println(captcha)
-	content := `{"username": "admin", "password": "123456", "captcha": "` + captcha + `", "captchaId": "` + captchaId + `"}`
+	content := `{"username": "`+ user +`", "Password":"`+ passwd +`", "captcha": "` + captcha + `", "captchaId": "` + captchaId + `"}`
 	body, err := login.Client(url+"/api/base/login", content)
 	if err != nil {
 		fmt.Printf("login: %v\n", err)
@@ -173,10 +173,10 @@ func (login *Login) AllClient(xtoken, url, content string) ([]byte, error) {
 	return ioutil.ReadAll(res.Body)
 }
 
-func Gvalogin(url string, Map map[string]string ) {
+func Gvalogin(url string,user string, passwd string ,Map map[string]string ) {
 	for {
-		if xtoken, err := LoginApp.Xtoken(url); err != "登录成功" {
-			fmt.Printf("login123: %v\n", err)
+		if xtoken, err := LoginApp.Xtoken(url,user,passwd); err != "登录成功" {
+			fmt.Printf("login: %v\n", err)
 		} else {
 			var Json map[string]interface{}
 			fmt.Println(xtoken)

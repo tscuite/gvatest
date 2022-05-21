@@ -5,9 +5,11 @@ import (
 )
 
 const url string = "https://demo.gin-vue-admin.com"
+const admin string = "admin"
+const passwd string = "123456"
 
 func main() {
-	gvalogin.Gvalogin(url,Map())
+	gvalogin.Gvalogin(url,admin,passwd,Map())
 }
 
 //登陆后访问地址,后期改为表格获取或数据库，或自动化接口文档，
