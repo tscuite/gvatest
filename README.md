@@ -1,7 +1,3 @@
-# gvatest
-
-
-
 可以使用萌新制作的ddddorc镜像启动，或者自己启动代码中的python文件开启grpc
 
 ```
