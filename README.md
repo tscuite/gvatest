@@ -2,7 +2,7 @@
 
 
 
-可以使用萌新制作的ddddorc镜像启动或者自己启动代码中的python文件开启grpc
+可以使用萌新制作的ddddorc镜像启动，或者自己启动代码中的python文件开启grpc
 
 ```
 docker run -dit --rm --name ddddorc -p 7001:7000 registry.cn-hangzhou.aliyuncs.com/tscuite/ddddorc:v1
